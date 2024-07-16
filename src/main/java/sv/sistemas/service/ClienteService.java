@@ -17,7 +17,15 @@ public class ClienteService {
         return clienteRepository.findAll();
     }
 
+    public Cliente findById(Long id) {
+        return clienteRepository.findById(id).orElse(null);
+    }
+
     public Cliente save(Cliente cliente) {
         return clienteRepository.save(cliente);
+    }
+
+    public void deleteById(Long id) {
+        clienteRepository.deleteById(id);
     }
 }

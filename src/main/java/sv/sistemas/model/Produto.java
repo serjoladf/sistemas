@@ -1,6 +1,9 @@
 package sv.sistemas.model;
 
-import javax.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Produto {
@@ -8,19 +11,16 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String nome;
-    private int estoque;
     private int quantidade;
     private double preco;
-
-    @Transient
-    private double valorTotal;
+    private int estoque;
 
     public double getValorTotal() {
         return quantidade * preco;
     }
 
+    // Getters e Setters
     public Long getId() {
         return id;
     }
@@ -35,14 +35,6 @@ public class Produto {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public int getEstoque() {
-        return estoque;
-    }
-
-    public void setEstoque(int estoque) {
-        this.estoque = estoque;
     }
 
     public int getQuantidade() {
@@ -61,9 +53,11 @@ public class Produto {
         this.preco = preco;
     }
 
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
+    public int getEstoque() {
+        return estoque;
     }
 
-    
+    public void setEstoque(int estoque) {
+        this.estoque = estoque;
+    }
 }

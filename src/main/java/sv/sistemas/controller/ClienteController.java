@@ -19,8 +19,18 @@ public class ClienteController {
         return clienteService.findAll();
     }
 
+    @GetMapping("/{id}")
+    public Cliente findById(@PathVariable Long id) {
+        return clienteService.findById(id);
+    }
+
     @PostMapping
     public Cliente save(@RequestBody Cliente cliente) {
         return clienteService.save(cliente);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Long id) {
+        clienteService.deleteById(id);
     }
 }

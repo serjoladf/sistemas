@@ -1,9 +1,9 @@
 package sv.sistemas.model;
 
-import javax.persistence.*;
+import jakarta.persistence.Embeddable;
 
 @Entity
-public class CondicaoPagamento {
+public class CondicoesPagamento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

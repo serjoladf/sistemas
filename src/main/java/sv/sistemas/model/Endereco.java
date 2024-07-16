@@ -1,6 +1,6 @@
 package sv.sistemas.model;
 
-import javax.persistence.*;
+import jakarta.persistence.Embeddable;
 
 @Entity
 public class Endereco {
