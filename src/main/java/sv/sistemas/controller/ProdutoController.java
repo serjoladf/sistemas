@@ -33,4 +33,10 @@ public class ProdutoController {
     public void deleteById(@PathVariable Long id) {
         produtoService.deleteById(id);
     }
+
+    // Método para adicionar produto à venda
+    @PostMapping("/adicionar")
+    public void adicionarProdutoAVenda(@RequestBody Produto produto) {
+        produtoService.adicionarProdutoAVenda(produto);
+    }
 }

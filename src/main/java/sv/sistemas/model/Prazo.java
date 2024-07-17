@@ -1,6 +1,9 @@
 package sv.sistemas.model;
 
-import jakarta.persistence.Embeddable;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Prazo {
@@ -9,6 +12,9 @@ public class Prazo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String descricao;
+
+    // Getters e Setters
     public Long getId() {
         return id;
     }
@@ -24,10 +30,4 @@ public class Prazo {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-
-    private String descricao;
-
-    public static final List<String> PRAZOS_PREDEFINIDOS = Arrays.asList("7 dias", "14 dias", "21 dias", "28 dias", "7/14 dias", "21/28 dias");
-
-    // Getters and setters
 }

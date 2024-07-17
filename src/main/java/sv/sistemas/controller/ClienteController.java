@@ -33,4 +33,10 @@ public class ClienteController {
     public void deleteById(@PathVariable Long id) {
         clienteService.deleteById(id);
     }
+
+    // Método para criar um novo cliente
+    @PostMapping("/criar")
+    public Cliente criarCliente(@RequestBody Cliente cliente) {
+        return clienteService.criarCliente(cliente);
+    }
 }

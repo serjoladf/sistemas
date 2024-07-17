@@ -11,16 +11,14 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
-    private int quantidade;
-    private double preco;
+    private String descricao;
     private int estoque;
+    private int quantidade;
+    private double valorTotal;
 
-    public double getValorTotal() {
-        return quantidade * preco;
-    }
-
-    // Getters e Setters
+    // Getters e setters
     public Long getId() {
         return id;
     }
@@ -37,20 +35,12 @@ public class Produto {
         this.nome = nome;
     }
 
-    public int getQuantidade() {
-        return quantidade;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-
-    public double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(double preco) {
-        this.preco = preco;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public int getEstoque() {
@@ -59,5 +49,21 @@ public class Produto {
 
     public void setEstoque(int estoque) {
         this.estoque = estoque;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public double getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
     }
 }

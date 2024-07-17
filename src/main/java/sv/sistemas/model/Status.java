@@ -1,6 +1,9 @@
 package sv.sistemas.model;
 
-import jakarta.persistence.Embeddable;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Status {
@@ -11,26 +14,20 @@ public class Status {
 
     private String descricao;
 
-    public static final String LIBERADO = "Liberado";
-    public static final String BLOQUEADO = "Bloqueado";
+    // Getters e setters
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
+
     public String getDescricao() {
         return descricao;
     }
+
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    public static String getLiberado() {
-        return LIBERADO;
-    }
-    public static String getBloqueado() {
-        return BLOQUEADO;
-    }
-
-    // Getters and setters
 }

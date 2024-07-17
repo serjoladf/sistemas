@@ -1,6 +1,11 @@
 package sv.sistemas.model;
 
-import jakarta.persistence.Embeddable;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
 
 @Entity
 public class Endereco {
@@ -17,6 +22,7 @@ public class Endereco {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
+    // Getters e setters
     public Long getId() {
         return id;
     }
@@ -56,6 +62,4 @@ public class Endereco {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
-
-    // Getters and setters
 }

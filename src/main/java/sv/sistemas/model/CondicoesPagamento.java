@@ -1,6 +1,9 @@
 package sv.sistemas.model;
 
-import jakarta.persistence.Embeddable;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class CondicoesPagamento {
@@ -11,6 +14,7 @@ public class CondicoesPagamento {
 
     private String descricao;
 
+    // Getters e setters
     public Long getId() {
         return id;
     }
@@ -26,6 +30,4 @@ public class CondicoesPagamento {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-
-    // Getters and setters
 }
